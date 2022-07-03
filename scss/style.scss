@@ -1,0 +1,333 @@
+@font-face {
+    font-family: "Helvetica"; 
+    src: url("/fonts/helvetica.eot") format("eot"); 
+    font-style: normal; 
+    font-weight: normal; 
+} 
+@import "variables";
+@import "mixins";
+
+
+body{
+    background:$Main;
+}
+
+
+.border-end {
+    border-right: 1px solid #c3c3c3!important;
+}
+.border-start{
+    border-left: 1px solid #c3c3c3!important;
+}
+.border-bottom{
+    border-bottom: 1px solid #c3c3c3!important;
+}
+
+
+.content_box{
+    .left_box{
+        .menu_soc_bar{
+            width: $LeftAndRightWidth;
+            height: 600px;
+            background: $MainСontent;
+            
+        }
+            .navbar_box{
+                list-style-type:none;
+
+                li{
+                    margin-top: 20px;
+                }
+                li:first-child{
+                    color:$color;
+                    margin-top: 20px;
+                    i{
+                        font-size:2rem;
+                    }
+                }
+                li:nth-child(9){
+                    margin-bottom: 20px;
+                }
+                li:hover{
+                    i{
+                        color:$color;
+                    }
+                }
+                li:nth-child(3){
+                    i{
+                        font-size:1.7em
+                    }
+                }
+                li{
+                    button{
+                        padding:10px 90px;
+                        border-radius:25px;
+                    }
+                }
+                i{
+                    margin-left: 60px;
+                    font-size: 1.5rem;
+                    width: 20px;
+                }
+                a{
+                    @include text("Helvetica", sans-serif );
+                    @include menuList($nameTitel,$textdecoration,$fontWeight,14pt,35px);
+                }
+            }
+        }
+    }
+
+
+.content_box{
+    .center_box{
+        background:$MainСontent; 
+        height: 100%;
+        .icon{
+            width: 100px;
+            color:$color;
+            margin: 0 5px;
+            padding-bottom: 15px;
+            font-size: 2rem;
+        }
+        ._Name_Box{
+            h4{
+                @include text("Helvetica", sans-serif );
+                @include h4(18pt,#14171a,1px,$fontWeight);
+            }
+            h6{
+                @include text("Helvetica", sans-serif );
+                @include Tweets(11pt,$Tweet);
+            }
+        }
+        .profile_box{
+            width: $cenetrBlockWidth;
+            .about_me{
+                position: relative;
+                top: -150px;
+                .about_me_button{
+                    margin-top: $marginTop_CenterBox+80px;
+                }
+                img{
+                    @include imgAvatar(0.75rem,25px,50%);
+                }
+                button{
+                    @include AboutMeButton(10px,90%,1px solid #2aa3ef);
+                }
+                .icon_aboutMe{
+                    color: $color;
+                    font-size:1.2rem;
+                    padding: 0px 12px;
+                }
+                button:last-child{
+                    color: $color;
+                    border-radius:20px;
+                }
+            }
+            .info_me{
+                @include infoMe(-190px);
+                .myInfoBox{
+                    @include text("Helvetica", sans-serif );
+                    p{
+                        margin-top:20px;
+                        margin-bottom:20px;
+                    }
+                    .my_Link{
+                        margin-bottom: 20px;
+                        
+                        a{color:$Tweet}
+                        a:first-child{
+                            color:$color;
+                            i{margin-left:0;}
+                        }
+                        a:hover{
+                            cursor: pointer;
+                            text-decoration:underline;
+                        }
+                        i{@include iconInfoMe($Tweet,30px,15px);}
+                    }
+                    .my_follow{
+                        h6:last-child{
+                            margin-left:50px;
+                        }
+                        span{
+                            font-weight: $fontWeight;
+                            color: $nameTitel;
+                        }
+                    }
+                }
+            }
+            .menu{
+                margin-bottom: 100px;
+                margin-top: 20px;
+                li{
+                    @include text("Helvetica", sans-serif );
+                    @include listMenu(none,50px,$Tweet,$fontWeight,pointer);
+                }
+
+                .underlinedBlue{
+                    @include Blue($color,2px solid $color);
+                }
+            }
+        }
+    }
+
+    ////Правый Контент
+    .right{
+        width: $rightWidth;
+        height: 100%;
+        .right_box_serach{
+            margin-top: $marginTop_RightBox;
+            margin-bottom: 30px;
+            background:$backgroundInput;
+            border-top: 1px solid $backgroundInput;
+            border-radius: 20px;
+            label{
+                margin-left: 20px;
+                color:#667786 ;
+            
+            }
+            input{
+                background: $backgroundInput;
+                border: 0;
+                outline: none;
+            }
+            input:focus{
+                box-shadow: none;
+            }
+            input::placeholder{
+                color:#667786;
+                @include text("Helvetica", sans-serif );
+            }
+        }
+        .right_box{
+            background:$MainСontent;
+            height: 100%;
+            figure {
+                img{
+                    width: 100%;
+                    max-width: 175px;
+                    height: auto;
+                }
+            }
+            .possible_follow{
+                background:$backgroundInput;
+                border-radius: 20px;
+                margin-top:$marginTop_RightBox;
+                h4{
+                    padding-top: 10px;
+                    margin-left:$marginLeft_RigtnBox;
+                    @include text("Helvetica", sans-serif );
+                    @include h4(18pt,#14171a,1px,$fontWeight);
+                }
+                div{
+                    
+                    h5{
+                        @include text("Helvetica", sans-serif );
+                        @include h4(14pt,#14171a,1px,$fontWeight);
+                    }
+                    h6{
+                        @include text("Helvetica", sans-serif );
+                        @include Tweets(11pt,$Tweet);
+                    }
+                }
+                button{
+                    margin-right: $marginRight_RightBox;
+                }
+                hr{
+                    border: 1px;
+                    filter: blur(1px);
+                }
+                img{
+                    width: 50px;
+                    height: auto;
+                    margin-left:$marginLeft_RigtnBox;
+                    margin-right: $marginRight_RightBox;
+                }
+                .Show_more{
+                    padding-bottom:20px ;
+                    margin-left:$marginLeft_RigtnBox;
+                    @include text("Helvetica", sans-serif );
+                    @include h4(12pt,$color,1px,500);
+                    a{
+                        text-decoration: none;
+                    }
+                    :hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .trends{
+                margin-top: 25px;
+                background:$backgroundInput;
+                border-radius: 20px;
+                h4{
+                    padding-top: 10px;
+                    margin-left:$marginLeft_RigtnBox;
+                    @include text("Helvetica", sans-serif );
+                    @include h4(18pt,#14171a,1px,$fontWeight);
+                }
+                i{
+                    padding-top: 10px;
+                    margin-right: $marginRight_RightBox;
+                    font-size: 1.5rem;
+                    color:$color;
+                }
+                hr{
+                    border: 1px;
+                    filter: blur(1px);
+                }
+                .My_trends{
+                    margin-left:$marginLeft_RigtnBox;
+                    h5{
+                        @include text("Helvetica", sans-serif );
+                        @include h4(14pt,#14171a,1px,$fontWeight);
+                        margin-bottom:5px;
+                    }
+                    h6{
+                        @include text("Helvetica", sans-serif );
+                        @include Tweets(11pt,$Tweet);
+                        margin-bottom:5px;
+                    }
+                }
+                .Show_more{
+                    padding-bottom:20px ;
+                    margin-left:$marginLeft_RigtnBox;
+                    @include text("Helvetica", sans-serif );
+                    @include h4(12pt,$color,1px,500);
+                    a{
+                        text-decoration: none;
+                    }
+                    :hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer{
+    background-color: #fff;
+    height: 50px;
+    div{
+        ul{
+            list-style-type: none;
+            padding: 0;
+            li{
+                .bi-house-door{
+                    color:#2aa3ef;
+                }
+                .bi{
+                    font-size:1.4rem
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+

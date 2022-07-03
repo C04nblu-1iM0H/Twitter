@@ -1,0 +1,69 @@
+//ЗАГОЛОВОК 
+@mixin h4($fontSize,$color,$marginBottom,$fontWeight){
+    color:$color;
+    font-size:$fontSize;
+    font-weight:$fontWeight;
+    margin-bottom: $marginBottom;
+}
+//НАДПИСЬ Tweets В ЗАГОЛОВКЕ 
+@mixin Tweets($fontSize,$color){
+    color:$color;
+    font-size:$fontSize;
+}
+
+@mixin text($fontFamily...){
+    font-family: $fontFamily;
+}
+//КНОПКИ ВОЗЛЕ АВАТАРКИ
+@mixin AboutMeButton($marginLeft,$borderRadius,$border...){
+    border-radius: $borderRadius;
+    border:$border;
+    margin-left: $marginLeft;
+}
+//АВАТАРКА
+@mixin imgAvatar($padding,$marginLeft,$borderRadius){
+    padding: $padding;
+    border-radius: $borderRadius;
+    // position: $position;
+    // z-index: $z-index;
+    // top:$top;
+    margin-left: $marginLeft;
+}
+//Информация о пользователе
+@mixin infoMe($marginTop) {
+    margin-top: $marginTop;
+}
+//Икони в информации о пользователе
+@mixin iconInfoMe($color,$marginLeft,$marginRight){
+    color:$color;
+    margin-left:$marginLeft;
+    margin-right:$marginRight;
+}
+
+//Меню перехода между котегориями
+@mixin listMenu($none,$height,$color,$fontWeight,$cursor) {
+    list-style-type: $none;
+    height: $height;
+    color: $color;
+    font-weight: $fontWeight;
+    cursor: $cursor;
+}
+
+//Меню перехода между котегориями при нажатии 
+//underlinedBlue
+@mixin Blue($color,$borderBottom){
+    color:$color;
+    border-bottom: $borderBottom;
+}
+
+//Левое меню эллементы списка a
+@mixin menuList ($color,$textDecoration,$fontWeight,$fontSize,$marginLeft){
+    font-size:$fontSize;
+    color:$color;
+    text-decoration: $textDecoration;
+    font-weight: $fontWeight;
+    margin-left:$marginLeft;
+}
+ 
+
+
